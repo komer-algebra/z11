@@ -1,13 +1,8 @@
-# React: solo vjezba states and events
+# z11 - liste
 
-(Če)tri komponente:
-- App funkcijska)  (App)
-- lista funkcijska  (ListFunc)
-- lista class-na  (ListClass)
-- paragraf funkcijski (User)
-
-Dva event handler-a
-- button koji mijenja age svim korisnicima (useState, setAge)
-- input koji mijenja ime smao jednom user-u (useState, changeName)
+Potrebno je prikazati sve korisnike u stanju (stateu) pomoću liste
+2. Ukoliko se u polje korisnici doda još korisnika, oni se moraju automatski prikazati na ekranu, bez mijenjanja kôda
+3. Promjena imena preko trake za unos teksta mora raditi na svim korisnicima
+4. Radi optimizacije renderiranja kôda svaki element u listi mora imati postavljen unikatan ključ (key)
 
  
