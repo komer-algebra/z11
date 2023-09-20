@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import './App.css'
-import ListClass from './components/listClass';
-import ListFunc from './components/listFunc';
 import User from './components/user';
 
 function App() {
@@ -16,10 +14,6 @@ function App() {
 
   const [users, setUsers] = useState(initialUsers);
 
-  const increaseAge = () => {
-    setUsers(users.map(user => { return { ...user, age: user.age + 1 } }))
-  }
-
   const changeName = []
   for (let i = 0; i < users.length; i++) {
     changeName.push(
@@ -31,27 +25,13 @@ function App() {
     );
   }
 
-  const userParagraphs = [];
-  for (let i = 0; i < users.length; i++) {
-    userParagraphs.push(<User key={"userParagraph" + i} name={users[i].name} age={users[i].age} changeName={changeName[i]} id={"par"+i} />);
-  }
+  const userParagraphs = users.map((user,index) => <User key={"userParagraph" + index} name={user.name} age={user.age} changeName={changeName[index]} id={"par"+index} />);
 
   return (
     <>
-      <h1>Vjezba state-a i event-a</h1>
-
-      <h2>Koristim class komponentu liste</h2>
-      <ListClass users={users} />
-
-      <h2>Koristim funkcijsku komponentu liste</h2>
-      <ListFunc users={users} />
-
-      <h2>Paragraf s buttonom po svakom user-u</h2>
+      <h1>z11 - liste - state - event</h1>
+      <h2>Paragraf s button-om po svakom user-u</h2>
       {userParagraphs}
-
-      <h2>Button koji pvecava godine svima!</h2>
-
-      <button onClick={increaseAge}> AGE++ </button>
     </>
   )
 }
